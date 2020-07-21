@@ -66,10 +66,8 @@ router.post('/contact', function(req, res) {
         port: 465,
         secure: true,
         auth: {
-            type: 'OAuth2',
             user: process.env.GMAIL_USER,
-            clientId: '871818438731-m65grvrn9j8js0reo5b4k745hmt877pq.apps.googleusercontent.com',
-            clientSecret: '71LZKItttP_6TYhEZ4TSVV0o',
+            pass: process.env.GMAIL_PASSWORD
         }
     });
   
