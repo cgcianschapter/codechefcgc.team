@@ -1,0 +1,96 @@
+.wrapper {
+  width: 100%; }
+
+#sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  background-color: whitesmoke;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #sidebar.active {
+    margin-left: -300px; }
+  #sidebar .logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+    #sidebar .logo span {
+      display: block; }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 10px 0;
+      display: block;
+      color: grey;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #007bff; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #007bff; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      max-width: 150px;
+      min-width: 150px;
+      }
+      #sidebar.active {
+        margin-left: 0; } 
+      
+          }      
+
+a[data-toggle="collapse"] {
+  position: relative; }
+
+.align-items-stretch {
+  -webkit-box-align: stretch !important;
+  -ms-flex-align: stretch !important;
+  align-items: stretch !important; }
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none; 
+  text-decoration: none;}
+
+.rounded-circle {
+  border-radius: 50% !important; }
+
+
+.img {
+  vertical-align: middle;
+  border-style: none; }
+@media (max-width: 600px) {
+    #re {
+        margin-top: 10px;
+    }
+    #le {
+        margin-top: 10px;
+    }
+}
+
+#updatePage {
+  margin-top: 100px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 1280px) {
+  .loginform, .registerform, .eventform, .updateform {
+    width: 30%;
+    margin: 40px auto;
+  }
+}

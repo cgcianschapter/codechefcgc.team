@@ -1,0 +1,92 @@
+
+<%- include('./partials/header') %>
+
+<!- jumbotron-!>
+<div class="jumbotron jumbotron-fluid" style="background-color: white">
+<div class="container">
+</div>
+</div>
+ 
+<div class="d-flex align-items-stretch">
+      <nav id="sidebar">
+          <div class="p-4 pt-5">
+            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/topa2.png);background-size: contain;"></a>
+      <ul class="list-unstyled components mb-5">
+        <% if(!currentUser) { %>
+        <li>
+            <a class="nav-link" href="/events/2019-20"><b>Chapter 2019-20</b></a>
+        </li>
+        <li>
+            <a class="nav-link" href="/events/2020-21"><b>Chapter 2020-21</b></a>
+        </li>
+        <li class="active">
+        <a class="nav-link" href="/upcoming_events"><b>Upcoming Events</b></a>
+        </li>
+      <% } else { %>
+      <li>
+          <a class="nav-link" href="/events/2019-20"><b>Chapter 2019-20</b></a>
+      </li>
+      <li>
+          <a class="nav-link" href="/events/2020-21"><b>Chapter 2020-21</b></a>
+      </li>
+      <li class="active">
+      <a class="nav-link" href="/upcoming_events"><b>Upcoming Events</b></a>
+      </li><br>
+      <a href="/addevent" class="btn btn-block btn-primary">Add Event</a>
+      <% } %>
+    </ul>
+    </div>
+  </nav>
+
+<!- upcoming card-!>
+
+<div class="container">
+ <div class="row">
+    <% if(!event) { %>
+      <p class="display-4 lead text-center" style="color: #888888;">
+        "No upcoming event currently,
+        Stay tuned for event updates and opportunities to show your coding skills"
+      </p>
+    <% } else { %>
+      <div class="col-sm-6">
+        <div class="card text-center" style="box-shadow: 0px 0px 20px #888888">
+      <img class="card-img-top" src="<%=event.image%>" alt="quiz">
+      <div class="card-body">
+      <h5 class="card-title"><%=event.eventname%></h5>
+      <hr>
+      <p class="card-text"><%=event.eventinfo%></p>
+      <a href="singleevent.htm" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Know more</a>
+      </div>
+      </div>
+            <!- Modal ->
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><%=event.eventname%></h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+        <%=event.description%>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    <% } %>  
+    </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<%- include('./partials/footer') %>

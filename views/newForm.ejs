@@ -1,0 +1,42 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+	<div class="row">
+    <div class="col">
+		<h1 id="updatePage" class="text-center">
+			Update Page
+		</h1><hr>
+		<form action="/" method="POST" class="updateform" style="margin: 60px auto;">
+			<div class="form-group">
+                <label for="winner1">Name of Winner 1</label>
+                <input  value="<%= data?data.first :'' %>" type="text"  class="form-control" id="winner1" name="first" placeholder="1st">
+              </div>
+              <div class="form-group">
+                <label for="winner2">Name of Winner 2</label>
+                <input  value="<%= data?data.second :'' %>" type="text" class="form-control" id="winner2" name="second" placeholder="2nd" >
+              </div>
+              <div class="form-group">
+                <label for="winner3">Name of Winner 3</label>
+                <input  value="<%= data?data.third :'' %>" type="text" class="form-control" id="winner3" name="third" placeholder="3rd" >
+              </div>
+              <div class="form-group">
+                <label for="event">Upcoming Event Name</label>
+                <input  value="<%= data?data.event :'' %>" type="text" class="form-control" id="event" name="event" placeholder="Event Name" >
+              </div>
+              <div class="form-group">
+                <label for="countdown">Countdown in format(Month Date, Year hh:mm:ss)</label>
+                <input  value="<%= data?data.countdown :'' %>" type="text" class="form-control" id="countdown" name="countdown" placeholder="Month Date, Year hh:mm:ss" >
+              </div>
+              <div class="form-group">
+                <label for="link">Evevt Regestration link</label>
+                <input  value="<%= data?data.link :'' %>" type="text" class="form-control" id="link" name="link" placeholder="ex: https://www.xyz.com">
+              </div>
+              <button type="submit" class="btn btn-success btn-block">Submit</button>
+              <a href="/">Go Back</a>
+    </form>	
+  </div>
+	</div>
+</div>
+
+<%- include('./partials/footer') %>
+
