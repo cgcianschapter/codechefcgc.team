@@ -4,8 +4,9 @@ const passport = require('passport');
 const passportLocalmongoose = require('passport-local-mongoose');
 const passportLocal = require('passport-local');
 const expressSession = require('express-session');
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
 const User = require('../models/user');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 //SHOW register form
 router.get("/register", function(req, res){
@@ -57,39 +58,23 @@ router.get('/contact', function(req, res, next) {
     res.render('contact');
 });
 
-
 // POST route from contact form
-router.post('/contact', function(req, res) {
-    // Instantiate the SMTP server
-    const smtpTrans = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASSWORD
-        }
-    });
-  
-    // Specify what the email will look like
-    const mailOpts = {
-      from: 'user', // This is ignored by Gmail
-      to: 'absk.codechef@gmail.com',
-      subject: req.body.subject,
-      text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-    }
-  
-    // Attempt to send the email
-    smtpTrans.sendMail(mailOpts, (err, response) => {
-      if (err) {
-        req.flash('error', err.message);  
-        res.redirect('/contact') // Show a page indicating failure
-      }
-      else {
-        req.flash('success', `Thank you! ${req.body.name}. Your message was sent. We will reach you as soon as possible.`);  
-        res.redirect('/contact') // Show a page indicating success
-      }
-    });
+router.post('/contact', async function(req, res) {
+  const msg = {
+    to: 'codechef.cgcianschapter@gmail.com',
+    from: 'codechef.cgcianschapter@gmail.com',
+    subject: req.body.subject,
+    text: `A query has been submitted by ${req.body.name}(${req.body.email}) Ph no.- ${req.body.number} - ${req.body.message}`
+  }
+  try {
+    await sgMail.send(msg);
+    req.flash('success', 'Thank you, your message was sent. We will get back to you shortly!');
+    res.redirect('/contact');
+  }
+  catch(err) {
+    req.flash('error', 'Oops, Something went wrong. Please try again later!');
+    res.redirect('/contact');
+  }
 });
 
 module.exports = router;

@@ -12,7 +12,6 @@ const passportLocal = require('passport-local');
 const expressSession = require('express-session');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const nodemailer = require('nodemailer');
 const User = require('./models/user');
  
 
