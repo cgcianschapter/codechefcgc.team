@@ -26,8 +26,8 @@ const eventsRouter = require('./routes/events');
 const app = express();
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/codechef', {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
-/*
+//mongoose.connect('mongodb://localhost:27017/codechef', {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
+
 mongoose.connect("mongodb+srv://Abhishek:noobmaster69@cluster0.l3k2t.mongodb.net/cgccoe?retryWrites=true&w=majority", {
   useCreateIndex: true,
   useNewUrlParser: true,
@@ -36,7 +36,7 @@ mongoose.connect("mongodb+srv://Abhishek:noobmaster69@cluster0.l3k2t.mongodb.net
   console.log('Connected to DB');
 }).catch(err => {
   console.log('ERROR : ', err.message);
-});*/
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
