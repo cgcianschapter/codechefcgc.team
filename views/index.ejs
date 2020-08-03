@@ -1,30 +1,69 @@
 <%- include('./partials/header') %>
 
+<style>
+  body {
+    background-color: #000;
+  }
+  .jumbotron{
+    height: 700px;
+  }
+  .animated-title {
+
+    height: 90vmin;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 120vmin;
+  }
+  @media only screen and (max-width: 766px){
+    .animated-title {
+                  top: 30%;
+                }
+                
+                .jumbotron{
+                    height: 300px;
+                }
+                #listt{
+                    margin-top: -4px !important;
+                    padding-top: 3px !important;
+                }
+
+                .animated-title{
+                    width: 80vmin;
+                }
+                .animated-title > div.text-bottom div {
+                left: 20px;
+                
+                }  
+    }
+</style>
+
 <!-- jumbotron -->
     
      
-<div class="jumbotron jumbotron-fluid mt-5" id="navvy" style="background-color:white;">
- 
+<div class="jumbotron jumbotron-fluid" id="navvy" style="background-image: url(../images/bg.png); margin-top: -75px; background-repeat: no-repeat; background-position: center; background-size: cover;">
 <div class="container text-center">
-<h1 class="display-4" style="font-weight: 600">WELCOME TO CODECHEF</h1>
-<h2 class="display-4" style="font-weight: 600; color: deepskyblue">CCGIANS CHAPTER</h2>
+  <div class="animated-title">
 
+  </div>
 </div>
 </div>
 
 <!- cards -!>
 <div class="container">
   <div class="row">
-    <div class="card col-12" style="width: 24rem; border: 0px;" id="corepic">
-      <img src="images/3.jpg" class="card-img-top" alt="welcome">
+    <div class="card col-12" style="width: 24rem; border: 0px; background-color: black;" id="corepic">   
+      <img src="images/osg.gif" class="card-img-top" alt="welcome">
     </div>
-    <div class="card  text-black col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px;">
-      <img src="images/7.jpg" class="card-img" style="opacity: 0.4; width: 100%" alt="event">
+    <div class="card  text-black col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
+      <img src="images/11333.jpg" class="card-img" alt="event" style="width: 100%; height: 100%;">
       <div class="card-img-overlay">
-        <h4 class="card-title text-center" style="font-weight: 700;">CHEFS OF THE WEEK</h4>
+        <h4 class="card-title text-center" style="font-weight: 700; color: white;">CHEFS OF THE WEEK</h4>
         <hr style="width: 60%;">
         <p class="card-text">
-        <ol class="mt-3" style="font-size: 18px; font-family: 'Pacifico', cursive;">
+        <ol class="mt-3" style="font-size: 18px; font-family: 'Pacifico', cursive;  color: white;">
           <% if(!data){ %>
             <li class="mt-3"> <i class="fas fa-trophy"></i>  Winner 1</li>
             <li class="mt-3"> <i class="fas fa-medal"></i>  Winner 2</li>
@@ -37,24 +76,24 @@
         </ol>
       </div>
     </div>
-    <div class="card col-sm-6 col-lg-4 col-md-4" style="width: 24rem; border: 0px;" id="corepic2">
-      <img src="images/3.jpg" class="card-img-top" alt="welcome">
+    <div class="card col-sm-6 col-lg-4 col-md-4" style="width: 24rem; border: 0px; background-color: black;" id="corepic2">
+      <img src="images/osg.gif" class="card-img-top" alt="welcome">
     </div>
-    <div class="card text-black text-center col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px">
-      <img src="images/7.jpg" class="card-img" style="opacity: 0.4; width: 100%" alt="event">
+    <div class="card text-black text-center col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
+      <img src="images/11333.jpg" class="card-img" alt="event" style="width: 100%; height: 100%;">
      
       <% if(!data){ %>
         <div class="card-img-overlay">
-          <h4 class="card-title text-center" style="font-weight: 700;font-size: 1.4em">Event Name</h4>
+          <h4 class="card-title text-center" style="font-weight: 700;  color: white; font-size: 1.4em">Event Name</h4>
           <hr style="width: 60%;">
-          <p class="card-text text-center" style="margin-top: 50px; font-family: 'Orbitron', sans-serif; font-size: x-large;">00 : 00 : 00</p>
+          <p class="card-text text-center" style="margin-top: 50px;  color: cyan; font-family: 'Orbitron', sans-serif; font-size: x-large;">00 : 00 : 00</p>
           <a href="#" target="_blank" class="btn btn-primary" style="text-align: center">Register</a>
         </div>
       <% } else{ %> 
         <div class="card-img-overlay">
-          <h5 class="card-title text-center" style="font-weight: 700;font-size: 1.4em"><%= data.event %></h5>
+          <h5 class="card-title text-center" style="font-weight: 700;  color: white; font-size: 1.4em"><%= data.event %></h5>
           <hr style="width: 60%;">
-          <p class="card-text text-center" id="timer" style="margin-top: 50px; font-family: 'Orbitron', sans-serif; font-size: x-large;"></p>
+          <p class="card-text text-center" id="timer" style="margin-top: 50px; color: cyan; font-family: 'Orbitron', sans-serif; font-size: x-large;"></p>
 
           <script>
             // Set the date we're counting down to
@@ -99,86 +138,83 @@
 <!-ABOUT-!>
 
 <div class="container py-3 mt-5" id="clubs">
-    <h2 class="display-4 text-center" style="background-color:white;font-weight: 600;font-size: 40px;" id="lurs">ABOUT</h2>
-    <hr style="width: 50%">
-</div>
+  <h2 class="display-4 text-center" style="color:white;font-weight: 600;font-size: 40px; " id="lurs">ABOUT</h2>
+  <hr style="background-color: white;">
 
-<!-ABOUT CARDS-!>
-
-<div class="container">
+  </div>
+  
+      <!-ABOUT CARDS-!>
+<div class="container" >
   <div class="row mt-2">
-      <div class="col-12 col-sm-12 col-md-12 col-lg-3 rounded-circle" style="height: 300px; width: 300px; background-image: url(images/cap.jpg); background-size: cover; background-repeat: no-repeat; background-position: center" id="cardimg1"><img>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3 rounded-circle" style="height: 300px; width: 300px; background-image: url(images/upperlogo.jpg); background-size: cover; background-repeat:repeat-y; background-position: center" id="cardimg1"><img>
       </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 text-center">
-          <h1 class="display-4">OUR STORY</h1>
-          <p class="lead">From a little spark to grow, to a fiery passion to bring the change, Team CCGIANS is ever growing team of the best productive minds in Chandigarh Group of Colleges, Landran. With an aim to expand our horizons, we recruit the creative minds periodically. 
-            The first milestone was set in 2020, when the initial team kicked off the beginning of the Codechef Community. After then, we never looked back, conducting a plethora of events, and daily mind boggling questions on social media handles to lubricate the smart minds on a regular basis. Our story is being written on daily basis in the book of creativity and productivity.
-            </p>
+          <h1 class="display-4" style="color: white;">OUR STORY</h1>
+          <p class="lead"  style="color: silver;">You are here at Codechef CCGIAN’s Chapter, the exclusive Codechef community at Chandigarh Group of Colleges, Landran. We host different coding events for those who have the knack for programming. From monthly events to weekly Chef of the weeks, join our events to practice your skills and improve them.</p>
       <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#ourstory">Know more</button>
-          <!- Modal -!>
-        <div class="modal fade" id="ourstory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
+          <!-- Modal -->
+         <div class="modal fade" id="ourstory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Our Story</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
-              </div>
+             </button>
+               </div>
               <div class="modal-body">
-                From a little spark to grow, to a fiery passion to bring the change, Team CCGIANS is ever growing team of the best productive minds in Chandigarh Group of Colleges, Landran. With an aim to expand our horizons, we recruit the creative minds periodically. 
-The first milestone was set in 2020, when the initial team kicked off the beginning of the Codechef Community. After then, we never looked back, conducting a plethora of events, and daily mind boggling questions on social media handles to lubricate the smart minds on a regular basis. Our story is being written on daily basis in the book of creativity and productivity.
-
-With a clear aim in mind, to streamline the best coders into one integrated platform to bring the best out of them, we are making our path and constantly expanding our team.
-
-                
-            
+                 CodeChef is a not-for-profit educational initiative by <a href="http://www.directi.com/">Directi</a>, an Indian software company. It is a global programming community that fosters learning and friendly competition, built on top of the world’s largest competitive programming platform. They have also built a large community of problem curators. We also partner with colleges and groups to create local <a href="https://www.codechef.com/campus_chapter/about">CodeChef Chapters</a>, meet-ups, orientation sessions, programming workshops.
+                  <br>
+                  
+                 You are here at Codechef CCGIAN’s Chapter, the exclusive Codechef community at Chandigarh Group of Colleges, Landran. We host different coding events for those who have the knack for programming. From monthly events to weekly Chef of the weeks, join our events to practice your skills and improve them.
+                 
+             
               </div>
               <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-              </div>
-                </div>
-                    </div>
-                      </div>
-    </div>
-    
-    <div class="col-12 col-sm-12 col-md-12 col-lg-9 text-center mt-4" ><h1 class="display-4">OUR VISION</h1>
-        <p class="lead text-justify">Our primary motive is to streamline all the productive and creative minds into one integrated platform for their development. We at Codechef CCGIAN’s Chapter believe that coding is an art, and one needs to be creative as well as logical to be good at coding. So we provide the best events and other activities to keep you engaged in coding and keep your interest locked in into this adventurous path. We work hard towards imparting the best knowledge possible and also keeps the doors open for improvement and learning. With each event conducted, we have two primary aims, to give the best knowledge from that medium and to gain valuable experiences along the way.
-
-        </p>
-    <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#ourvision">Know more</button>
-        <!- Modal -!>
-       <div class="modal fade" id="ourvision" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-           <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Our Vision</h5>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-           </button>
-             </div>
-            <div class="modal-body">
-              Our primary motive is to streamline all the productive and creative minds into one integrated platform for their development. We at Codechef CCGIAN’s Chapter believe that coding is an art, and one needs to be creative as well as logical to be good at coding. So we provide the best events and other activities to keep you engaged in coding and keep your interest locked in into this adventurous path. We work hard towards imparting the best knowledge possible and also keeps the doors open for improvement and learning. With each event conducted, we have two primary aims, to give the best knowledge from that medium and to gain valuable experiences along the way.
-
-              Also we keep our eye open for the shining gold in the way, so we constantly keep judging our community members and they can get an offer to join us anytime!
-              
-              
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
            
-            </div>
-            <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         
-            </div>
+              </div>
+                 </div>
+                    </div>
+                       </div>
+      </div>
+      
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 text-center" ><h1 class="display-4" style="color: white;">OUR VISION</h1>
+          <p class="lead" style="color: silver;">We believe in teamwork and leadership. We at Codechef CCGIAN’s chapter strive to provide the best learning experience to all those hardworking coders. Weather you’re a newbie or a pro testing your skills, we will provide you the best platform to learn in the best way possible. 
+          Started in Q1 of 2020, we have successfully concluded our first chapter and expanded our team for the next chapter. We look forward towards building a productive community of coders, join us! :-)
+          </p>
+      <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#ourvision">Know more</button>
+          <!-- Modal -->
+         <div class="modal fade" id="ourvision" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Our Vision</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
                </div>
-                  </div>
-                     </div>
+              <div class="modal-body">
+                  We believe in teamwork and leadership. We at Codechef CCGIAN’s chapter strive to provide the best learning experience to all those hardworking coders. Weather you’re a newbie or a pro testing your skills, we will provide you the best platform to learn in the best way possible. 
+          Started in Q1 of 2020, we have successfully concluded our first chapter and expanded our team for the next chapter. We look forward towards building a productive community of coders, join us! :-)
+             
+              </div>
+              <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           
+              </div>
+                 </div>
+                    </div>
+                       </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3 " style="height: 300px; width: 300px; background-image: url(images/upperlogo.jpg); background-size: contain; background-repeat: no-repeat; background-position: center" id="vision2">
+      </div>
+    
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-3 " style="height: 300px; width: 300px; background-image: url(images/Bulb.jpg); background-size: contain; background-repeat: no-repeat; background-position: center" id="vision2">
-    </div>
-  
   </div>
-</div> 
+
+  </div>
+
 
 
 <%- include('./partials/footer') %>

@@ -1,10 +1,21 @@
 <%- include('./partials/header') %>
 
+<style>
+    body {
+          background-image: url(../images/contact.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+    }
+    label {
+        color: #fff;
+    }
+</style>
+
 <div class="container">
 	<div class="column">
-		<h1 id="updatePage" style="text-align: center;">
+		<h1 id="updatePage" style="text-align: center; color: white;">
 			Contact us
-		</h1><hr>
+		</h1><hr style="background-color: white;">
         <form action="/contact" method="POST" role="form" class="eventform" style="margin: 60px auto;"> 
             <div class="form-group">
                 <label for="name">Your name</label>
@@ -26,8 +37,8 @@
                 <label for="message">Your Message</label>
                 <textarea type="text" class="form-control" id="message" name="message"></textarea>
             </div>
-            <button type="submit" class="btn btn-success btn-block">Send</button>
-            <a href="/">Go Back</a>
+            <button type="submit" class="btn btn-primary btn-block">Send</button>
+            <a href="/" style="color: white;">Go Back</a>
 		</form>	
 	</div>
 </div>

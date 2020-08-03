@@ -1,6 +1,6 @@
     <!-footer-!>     
-    <footer class="mt-2" style="background-color:gainsboro;">
-    <h6 class="text-center pt-2">Connect with us on:</h6>
+    <footer  id="footerSpace" style="background-color:rgb(24, 2, 2);">
+    <h6 class="text-center pt-2" style="color: #fff;">Connect with us on:</h6>
         <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link" href="https://www.facebook.com/CodeChef-CGCCOE-107766667677207" target="_blank"><i class='fab fa-facebook' style='font-size:36px'></i></a>
@@ -21,5 +21,10 @@
     <script src="/javascripts/jquery.slim.min.js"></script>
     <script src="/javascripts/popper.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+       $(document).on('click', 'ul li', function() {
+           $(this).addClass('active').siblings().removeClass('active');
+       })
+    </script>
   </body>
 </html>

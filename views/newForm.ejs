@@ -1,11 +1,22 @@
 <%- include('./partials/header') %>
 
+<style>
+  body {
+        background-image: url(../images/contact.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+  label {
+      color: #fff;
+  }
+</style>
+
 <div class="container">
 	<div class="row">
     <div class="col">
-		<h1 id="updatePage" class="text-center">
+		<h1 id="updatePage" class="text-center" style="color: white;">
 			Update Page
-		</h1><hr>
+		</h1><hr style="background-color: white;">
 		<form action="/" method="POST" class="updateform" style="margin: 60px auto;">
 			<div class="form-group">
                 <label for="winner1">Name of Winner 1</label>
@@ -31,8 +42,8 @@
                 <label for="link">Evevt Regestration link</label>
                 <input  value="<%= data?data.link :'' %>" type="text" class="form-control" id="link" name="link" placeholder="ex: https://www.xyz.com">
               </div>
-              <button type="submit" class="btn btn-success btn-block">Submit</button>
-              <a href="/">Go Back</a>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              <a href="/" style="color: white;">Go Back</a>
     </form>	
   </div>
 	</div>

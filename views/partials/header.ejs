@@ -61,7 +61,7 @@
                 }
                 #teamhr {
                     display: none;
-                }  
+                }
             }
             .mobileimg{
                 display: none;
@@ -80,7 +80,6 @@
                 display: none;
             } 
             
-            
         </style>   
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -88,8 +87,8 @@
       
     <!--navbar-->
       
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:white;box-shadow: 5px 10px 18px #888888">
-        <a class="navbar-brand" href="/"><img src="../images/logo.jpg"  width="120" height="40" class="d-inline-block align-top" alt="logo"></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-image: url(../images/navbar-1.png);box-shadow: 5px 10px 18px black;">
+        <a class="navbar-brand" href="/"><img src="../images/logo@4x.png"  width="40px" height="40px" class="d-inline-block align-top" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -98,49 +97,49 @@
             <% if(!currentUser){ %>
             <ul class="navbar-nav nav-pills mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/"><i class="fas fa-home"></i>  Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" style="color: white;"><i class="fas fa-home"></i>  Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/team"><i class="fas fa-users"></i>  Our Team</a>
+                    <a class="nav-link" href="/team" style="color: white;"><i class="fas fa-users"></i>  Our Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/upcoming_events"><i class="far fa-calendar-alt"></i>  Events</a>
+                    <a class="nav-link" href="/upcoming_events" style="color: white;"><i class="far fa-calendar-alt"></i>  Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
+                    <a class="nav-link" href="/contact" style="color: white;"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
                 </li>
             </ul>
-            <ul class="navbar-nav justify-content-end">
+            <ul class="navbar-nav justify-content-end nav-pills">
                 <!--
                 <li class="nav-item">
                     <a class="nav-link" href="/register"><i class='fas fa-user' style='font-size:16px'></i> Register</a>
                 </li>
                 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/login"><i class='fas fa-user' style='font-size:16px'></i> Admin Login</a>
+                    <a class="nav-link" href="/login" style="color: cyan;"><i class="fas fa-user-cog" style='font-size:16px'></i> Adminisration</a>
                 </li>
             </ul>
             <% } else { %>
                 <ul class="navbar-nav nav-pills mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/"><i class="fas fa-home"></i>  Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" style="color: white;"><i class="fas fa-home"></i>  Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/team"><i class="fas fa-users"></i>  Our Team</a>
+                        <a class="nav-link" href="/team" style="color: white;"><i class="fas fa-users"></i>  Our Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/upcoming_events"><i class="far fa-calendar-alt"></i>  Events</a>
+                        <a class="nav-link" href="/upcoming_events" style="color: white;"><i class="far fa-calendar-alt"></i>  Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
+                        <a class="nav-link" href="/contact" style="color: white;"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/update"><i class="fas fa-edit"></i>  Update Page</a>
+                        <a class="nav-link" href="/update" style="color: white;"><i class="fas fa-edit"></i>  Update Page</a>
                     </li>
                 </ul>   
-                <ul class="navbar-nav justify-content-end">
+                <ul class="navbar-nav justify-content-end nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout"><i class='fas fa-sign-out-alt' style='font-size:16px'></i> Logout</a>
+                        <a class="nav-link" href="/logout" style="color: cyan;"><i class='fas fa-sign-out-alt' style='font-size:16px'></i> Logout</a>
                     </li>
                 </ul>
             <% } %>
@@ -148,12 +147,12 @@
     </nav>
     <div class="container-fluid" style="padding-top: 80px;">
         <% if(error && error.length > 0){ %>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert" role="alert" style="background-color: rgb(247, 65, 65);">
                 <%=error%>
             </div>	
         <% } %>
         <% if(success && success.length > 0){ %>
-            <div class="alert alert-success" role="alert">
+            <div class="alert" role="alert" style="background-color: rgb(66, 250, 66);">
                 <%=success%>
             </div>
         <% } %>
