@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <!- topicon -!>
-        <link rel="icon" type="image/png" href="../images/upperlogo.jpg">
+        <link rel="icon" type="image/png" href="../images/logotop.jpeg">
 
         <!--Google Fonts-->
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -27,9 +27,10 @@
             #vision {
                 display: none;
             }
-            @media only screen and (max-width: 766px){
+            @media only screen and (max-width: 766px) {
                 #corepic {
                     display: block;
+                    margin-top: -93px;
                 }
                 #corepic2 {
                     display: none;
@@ -48,6 +49,8 @@
                 }
                 .mobileimg {
                     display: block !important;
+                    height: 400px;
+                    margin-top: 90px;
                 }
                 .pcimg {
                     display: none;
@@ -84,7 +87,7 @@
       
     <!--navbar-->
       
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-image: url(../images/navbar-1.png);box-shadow: 5px 10px 18px black;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark mobilebg desktopbg" style="background-image: linear-gradient(to right, rgb(128, 0, 0), #000066, #0066CC); box-shadow: 5px 10px 18px black;">
         <a class="navbar-brand" href="/"><img src="../images/logo@4x.png"  width="40px" height="40px" class="d-inline-block align-top" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -113,7 +116,7 @@
                 </li>
                 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/login" style="color: cyan;"><i class="fas fa-user-cog" style='font-size:16px'></i> Adminisration</a>
+                    <a class="nav-link" href="/login" style="color: #fff;"><i class="fas fa-user-cog" style='font-size:16px'></i> Adminisration</a>
                 </li>
             </ul>
             <% } else { %>
@@ -136,7 +139,7 @@
                 </ul>   
                 <ul class="navbar-nav justify-content-end nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout" style="color: cyan;"><i class='fas fa-sign-out-alt' style='font-size:16px'></i> Logout</a>
+                        <a class="nav-link" href="/logout" style="color: #fff;"><i class='fas fa-sign-out-alt' style='font-size:16px'></i> Logout</a>
                     </li>
                 </ul>
             <% } %>
