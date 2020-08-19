@@ -1,0 +1,45 @@
+<%- include('./partials/header') %>
+
+<style>
+  body {
+        background-image: url(../images/cotactx.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+  label {
+      color: #fff;
+  }
+</style>
+
+<div class="container">
+	<div class="row">
+    <div class="col">
+		<h1 id="updatePage" class="text-center" style="color: white;">
+			New Blog
+		</h1><hr style="background-color: white;">
+		<form action="/blogs" method="POST" class="updateform" style="margin: 60px auto;">
+			<div class="form-group">
+                <label for="title">Blog Title</label>
+                <input  type="text"  class="form-control" id="title" name="title" placeholder="Blog title">
+              </div>
+              <div class="form-group">
+                <label for="author">Blog Author</label>
+                <input  type="text"  class="form-control" id="author" name="author" placeholder="Blog author">
+              </div>
+              <div class="form-group">
+                <label for="image">Blog Image</label>
+                <input type="text" class="form-control" id="image" name="image" placeholder="image url" >
+              </div>
+              <div class="form-group">
+                <label for="link">Blog Link</label>
+                <input type="text" class="form-control" id="link" name="link" placeholder="eg: https://xyz.com" >
+              </div><br>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              <a href="/" style="color: white;">Go Back</a>
+    </form>	
+  </div>
+	</div>
+</div>
+
+<%- include('./partials/footer') %>
+

@@ -11,9 +11,9 @@
 </style>
 
 <div class="d-flex align-items-stretch" style="margin-top: 100px;">
-      <nav id="sidebar">
+      <nav id="sidebar" style="background-color: #000;">
           <div class="p-4 pt-5">
-            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/topa2.png);background-size: contain;"></a>
+            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/eventLOGO.jpeg);background-size: cover; background-position: center;"></a>
       <ul class="list-unstyled components mb-5">
         <% if(!currentUser) { %>
         <li>
@@ -52,9 +52,9 @@
       </p>
     <% } else { %>
       <div class="col-sm-6">
-        <div class="card text-center" style="box-shadow: 0px 0px 20px #888888">
+        <div class="card text-center" style="box-shadow: 0px 0px 20px #888888; background-color: black;">
       <img class="card-img-top" src="<%=event.image%>" alt="quiz">
-      <div class="card-body">
+      <div class="card-body" style="color: #fff;">
       <h5 class="card-title"><%=event.eventname%></h5>
       <hr>
       <p class="card-text"><%=event.eventinfo%></p>

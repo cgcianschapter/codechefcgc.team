@@ -23,9 +23,10 @@
                 }
                 
                 .jumbotron{
-                    height: 300px;
-                    background-size: contain !important;
-                    background-color: black;
+                  background-image: url(images/HomeMobile.png) !important;
+                  height: 755px !important;
+                  margin-top: -20px !important;
+                  background-size: cover;
                 }
                 #listt{
                     margin-top: -4px !important;
@@ -49,11 +50,11 @@
 
 <!- cards -!>
 <div class="container">
-  <div class="row">
+  <div class="row" style="margin-top: -38px;">
     <!--<div class="card col-12" style="width: 24rem; border: 0px; background-color: black;" id="corepic">   
       <img src="images/osg.gif" class="card-img-top" alt="welcome">
     </div>-->
-    <div class="card  text-black col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
+    <div class="card  text-black col-12 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
       <img src="images/bggg.png" class="card-img" alt="event" style="width: 100%; height: 100%;">
       <div class="card-img-overlay">
         <h4 class="card-title text-center" style="font-weight: 700; color: white;">CHEFS OF THE WEEK</h4>
@@ -75,7 +76,7 @@
     <div class="card col-sm-6 col-lg-4 col-md-4" style="width: 24rem; border: 0px; background-color: black;" id="corepic2">
       <img src="images/osg.gif" class="card-img-top" alt="welcome">
     </div>
-    <div class="card text-black text-center col-6 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
+    <div class="card text-black text-center col-12 col-lg-4 col-md-4" style="width: 18rem;border: 0px; background-color: black;">
       <img src="images/bggg.png" class="card-img" alt="event" style="width: 100%; height: 100%;">
      
       <% if(!data){ %>
@@ -123,18 +124,17 @@
             }, 1000);  
           </script>
         
-          <a href="<%= data.link %>" target="_blank" class="btn btn-primary" style="text-align: center">Register</a>
+          <a href="<%= data.link %>" target="_blank" class="btn btn-primary" style="text-align: center; margin-top: 40px;">Register</a>
         </div>
      <% } %>
     </div>
   </div>    
-</div><br><br><br><br><br>
-
+</div>
 
 <!-ABOUT-!>
 
 <div class="container py-3 mt-5" id="clubs">
-  <h2 class="display-4 text-center" style="color:white;font-weight: 600;font-size: 40px; " id="lurs">ABOUT</h2>
+  <h2 class="display-4 text-center" style="color:white;font-weight: 600;font-size: 40px; " id="lurs">ABOUT US</h2>
   <hr style="background-color: white;">
 
   </div>

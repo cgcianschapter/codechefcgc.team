@@ -1,0 +1,206 @@
+<%- include('./partials/header') %>
+
+
+<style>
+
+body
+        {
+          background-color: black;
+
+          
+        }
+        .jumbotron{
+                height: 600px;
+                min-height: 90%;     
+        }
+.animated-title {
+
+  height: 90vmin;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+    text-align: center;
+  transform: translate(-50%, -50%);
+  width: 120vmin;
+}
+</style>
+<style>
+       
+        
+
+        
+          #corepic {
+              display: none;
+
+          }
+          #vision {
+              display: none;
+          }
+         
+          
+          @media only screen and (max-width: 766px){
+              #corepic {
+                  display: block;
+              }
+              #corepic2 {
+                  display: none;
+              }
+              #vision {
+                  display: block;
+              }
+              #vision2 {
+                  display: none;
+              }
+              #cardimg1 {
+                  display: none;
+              }
+              #lurs {
+                  margin-top: 40px;
+              }
+              .animated-title {
+                  top: 30%;
+              }
+              
+              .jumbotron{
+                  
+                  min-height: 100%;
+              }
+              #listt{
+                  margin-top: -4px !important;
+                  padding-top: 3px !important;
+              }
+
+              .animated-title{
+                  width: 80vmin;
+              }
+              .animated-title > div.text-bottom div {
+              left: 20px;
+             
+              }
+          }
+
+        
+      
+      
+</style>
+<style>
+     
+  .scrolldown
+  {
+    position: absolute;
+    
+    left:50%;
+    width: 40px;
+    height: 40px;
+    
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+  }
+  .scrolldown span
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .scrolldown span:nth-child(1)
+  {
+    transform: translate(-15px,-15px);
+    animation-delay: -0.4s;
+  }
+  .scrolldown span:nth-child(2)
+  {
+    transform: translate(0px,0px);
+    animation-delay: -0.2s;
+
+  }.scrolldown span:nth-child(3)
+  {
+    transform: translate(15px,15px);
+    animation-delay: 0s;
+
+  }
+  @keyframes animate
+  {
+    0%
+    {
+      top: -5px;
+      left: -5px;
+      opacity: 0;
+
+    }
+    25%
+    {
+      top: 0px;
+      left: 0px;
+      opacity: 1;
+      
+    }
+    50%,100%
+    {
+      top: 5px;
+      left: 5px;
+      opacity: 0;
+      
+    }
+  }
+</style>
+<style>
+  body {
+        background-image: url(../images/21.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+  }
+</style>
+
+<!- jumbotron-!>
+    
+       <div class="jumbotron jumbotron-fluid" id="navvy" style="background-image: url(../images/Asset.png); background-repeat: no-repeat; margin-top: -20px; background-position: center; background-size: 100% 100%; ">
+        <div class="container text-center">
+          <div class="quote">
+            <h5 style="color: white; position: absolute;top: 55%;left: 50%">CodeChef-CGC provides with some of the best technical blogs on futuristic trends by our content masters.</h5>
+          </div>
+        <div class="animated-title">
+
+
+    </div>
+    </div>
+       </div>
+       <section>
+    
+    <div class="scrolldown">
+      <a href="#scrol"><span></span></a>
+      <span></span>
+      <span></span>
+      <a href="#scrol"><span></span></a>
+      
+    </div>
+  </section>
+
+  <div id="scrol">
+
+    <div class="container" >
+       <div class="row">
+         <% for(var i = 0; i < info.length; i++) { %>  
+            <div class="col-sm-6 col-lg-3.5 col-md-4">
+              <div class="card text-center" style="box-shadow: 0px 0px 20px #888888; margin-top: 100px; background-color: #000;">
+                <img class="card-img-top" src="<%=info[i].image%>" alt="quiz">
+                <div class="card-body" style="color: #fff;">
+                  <h5 class="card-title"><%=info[i].title%></h5>
+                  <h6 class="card-title"><em>Author-<%=info[i].author%></em></h6> <hr style="background-color: #fff;">
+                  <a href="<%=info[i].link%>" target="_blank" class="btn btn-primary">Read Blog</a>
+                </div>
+              </div>   
+            </div>
+          <% } %>
+      </div>
+    </div>
+
+  </div> 
+
+<%- include('./partials/footer') %>

@@ -106,13 +106,16 @@
                     <a class="nav-link" href="/upcoming_events" style="color: white;"><i class="far fa-calendar-alt"></i>  Events</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/ourblogs" style="color: white;"><i class="fas fa-pen-square"></i>  Blogs</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/contact" style="color: white;"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
                 </li>
             </ul>
             <ul class="navbar-nav justify-content-end nav-pills">
                 <!--
                 <li class="nav-item">
-                    <a class="nav-link" href="/register"><i class='fas fa-user' style='font-size:16px'></i> Register</a>
+                    <a class="nav-link" href="/register" style="color: #fff;"><i class='fas fa-user' style='font-size:16px'></i> Register</a>
                 </li>
                 -->
                 <li class="nav-item">
@@ -131,7 +134,13 @@
                         <a class="nav-link" href="/upcoming_events" style="color: white;"><i class="far fa-calendar-alt"></i>  Events</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/ourblogs" style="color: white;"><i class="fas fa-pen-square"></i>  Blogs</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/contact" style="color: white;"><i class='fas fa-envelope' style='font-size:16px'></i> Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blogs/new" style="color: white;"><i class="fas fa-pen-fancy"></i> Add Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/update" style="color: white;"><i class="fas fa-edit"></i>  Update Page</a>
@@ -145,7 +154,7 @@
             <% } %>
         </div>
     </nav>
-    <div class="container-fluid" style="padding-top: 80px;">
+    <div class="container-fluid message" style="padding-top: 80px;">
         <% if(error && error.length > 0){ %>
             <div class="alert" role="alert" style="background-color: rgb(247, 65, 65);">
                 <%=error%>
@@ -157,4 +166,4 @@
             </div>
         <% } %>
     </div>
-    
+  
